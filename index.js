@@ -81,11 +81,12 @@ const argv = yargs(hideBin(process.argv)).argv;
           dataIndex++;
         })
         .catch(() => {
-          console.log(`[-][FAILED SCRAP] => SKIP FILM!`);
+          console.log(`[-][FAILED SCRAP] => Error Data (SKIP)`);
         });
       loop++;
     }
     fs.writeFileSync("IMDb - Films.json", JSON.stringify(resultScrapper, null, 2));
+    console.log(`\n[FINISH] => RESULT SAVED ON IMDb - Films.json`);
   } else {
     console.log(`[FATAL ERROR] => Wrong Format!`);
     console.log(`[FORMAT MUST BE LIKE] => node index --find="drama" --max=10`);
