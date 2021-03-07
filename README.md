@@ -2,6 +2,25 @@
 Scrapper IMDb Detail Movie
 
 ## How it's work?
+It's have 2 version
+#### Automatic Version
+1. Clone This Repository & Go To Folder
+```
+git clone https://github.com/therevolt/scrapper-imdb
+```
+2. Install All Modules
+```
+npm install
+```
+4. Run Script
+```
+node index --find="KEYWORD_MOVIES" --max="MAX DATA AS YOU NEED"
+```
+5. Done!, Data Will Saved On ```IMDb - Films.json```
+![Preview](https://i.ibb.co/7JPWMbW/imdb4.png)
+
+
+#### Manual Version
 1. Open IMDb Website & Search Movie (for example url: [here](https://www.imdb.com/title/tt6882604/?ref_=ttls_li_tt))
 2. Right Click > Inspect Element > Console
 ![Preview](https://i.ibb.co/PmJ804b/imdb.png)
