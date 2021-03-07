@@ -7,6 +7,7 @@ It's have 2 version
 1. Clone This Repository & Go To Folder
 ```
 git clone https://github.com/therevolt/scrapper-imdb
+cd scrapper-imdb
 ```
 2. Install All Modules
 ```
@@ -14,10 +15,10 @@ npm install
 ```
 4. Run Script
 ```
-node index --find="KEYWORD_MOVIES" --max="MAX DATA AS YOU NEED"
+node index --find="KEYWORD_MOVIES" --max="MAX_DATA_AS_YOU_NEED"
 ```
 5. Done!, Data Will Saved On ```IMDb - Films.json```
-![Preview](https://i.ibb.co/7JPWMbW/imdb4.png)
+![Preview](https://i.ibb.co/QjFqbsn/imdb5.png)
 
 
 #### Manual Version
