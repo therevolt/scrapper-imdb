@@ -30,7 +30,7 @@ const argv = yargs(hideBin(process.argv)).argv;
     console.log(`|| Find Keyword : ${argv.find}`);
     console.log(`|| Max Result : ${condition}`);
     console.log(`[====================================]\n`);
-    while (dataIndex <= condition) {
+    while (dataIndex < condition) {
       const casts = [];
       await axios
         .get(url[loop])
