@@ -17,6 +17,9 @@ npm install
 ```
 node index --find="KEYWORD_MOVIES" --max="MAX_DATA_AS_YOU_NEED"
 ```
+
+- Example Command : ``` node index --find="action 2020" --max=10 ```
+
 5. Done!, Data Will Saved On ```IMDb - Films.json```
 ![Preview](https://i.ibb.co/QjFqbsn/imdb5.png)
 
