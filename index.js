@@ -22,6 +22,7 @@ const argv = yargs(hideBin(process.argv)).argv;
 
     let loop = 0;
     let dataIndex = 0;
+    let errorCount = 0;
     const condition = url.length >= maxData ? maxData : url.length;
     console.log(`[====================================]`);
     console.log(`||       SCRAPPER DETAIL MOVIE      ||`);
@@ -31,6 +32,11 @@ const argv = yargs(hideBin(process.argv)).argv;
     console.log(`|| Max Result : ${condition}`);
     console.log(`[====================================]\n`);
     while (dataIndex < condition) {
+      if (errorCount >= 5) {
+        fs.writeFileSync("IMDb - Films.json", JSON.stringify(resultScrapper, null, 2));
+        console.log(`\n[FINISH] => ${resultScrapper.length} RESULT SAVED ON IMDb - Films.json`);
+        return (dataIndex = condition);
+      }
       const casts = [];
       await axios
         .get(url[loop])
@@ -83,11 +89,12 @@ const argv = yargs(hideBin(process.argv)).argv;
         })
         .catch(() => {
           console.log(`[-][FAILED SCRAP] => Error Data (SKIP)`);
+          errorCount++;
         });
       loop++;
     }
     fs.writeFileSync("IMDb - Films.json", JSON.stringify(resultScrapper, null, 2));
-    console.log(`\n[FINISH] => RESULT SAVED ON IMDb - Films.json`);
+    console.log(`\n[FINISH] => ${resultScrapper.length} RESULT SAVED ON IMDb - Films.json`);
   } else {
     console.log(`[FATAL ERROR] => Wrong Format!`);
     console.log(`[FORMAT MUST BE LIKE] => node index --find="drama" --max=10`);
